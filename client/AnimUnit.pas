@@ -26,7 +26,9 @@ var
 
 implementation
   
-uses Unit1, MainUnit;
+uses MainUnit;
+
+
 const delay=35;
 var cx,cy,curx,cury,x,y:integer;
     _t:TForm;

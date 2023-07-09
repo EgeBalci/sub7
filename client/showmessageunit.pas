@@ -46,7 +46,7 @@ var
 
 implementation
 
-uses Unit1, AnimUnit, MainUnit;
+uses AnimUnit, MainUnit;
 
 {$R *.DFM}
 

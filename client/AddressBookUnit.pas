@@ -77,7 +77,7 @@ var
   huntit:TWsocket;
 implementation
 
-uses Unit1, MainUnit, DispInfoUnit, showmessageunit;
+uses MainUnit, DispInfoUnit, showmessageunit;
 const FirstTime:bool=true;
 {$R *.DFM}
 

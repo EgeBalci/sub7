@@ -42,7 +42,7 @@ var
 
 implementation
 
-uses Unit1, MainUnit;
+uses MainUnit;
 
 {$R *.DFM}
 

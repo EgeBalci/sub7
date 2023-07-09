@@ -66,7 +66,7 @@ var
   RegEdit: TRegEdit;
 implementation
 
-uses Unit1, MainUnit, showmessageunit;
+uses MainUnit, showmessageunit;
 
 {$R *.DFM}
 

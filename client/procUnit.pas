@@ -43,7 +43,7 @@ var
 
 implementation
 
-uses Unit1, MainUnit, ThreadUnit;
+uses MainUnit, ThreadUnit;
 
 {$R *.DFM}
 

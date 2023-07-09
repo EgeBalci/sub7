@@ -51,7 +51,7 @@ var
 
 implementation
 
-uses Unit1, MainUnit, ShortcutUnit, AnimUnit, KeyLoggerUnit, FileMunit,
+uses MainUnit, ShortcutUnit, AnimUnit, KeyLoggerUnit, FileMunit,
   winmUnit, iptoolUnit, procUnit;
 
 {$R *.DFM}

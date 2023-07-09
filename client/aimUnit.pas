@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, MainColors,
   ExtCtrls, StdCtrls, TFlatSpeedButtonUnit, OleCtrls,
-  OutlookBtn, htmlabel, ImgList, TB97Ctls, HTMLLite, Menus;
+  OutlookBtn, ImgList, TB97Ctls, Menus;
 
 type
   TaimForm = class(TForm)
@@ -21,7 +21,7 @@ type
     OutlookBtn2: TOutlookBtn;
     PopupMenu1: TPopupMenu;
     copy1: TMenuItem;
-    T_X_T: ThtmlLite;
+    T_X_T: TMemo;
     procedure FormCreate(Sender: TObject);
     procedure CloseButtonClick(Sender: TObject);
     procedure CaptionLabelMouseDown(Sender: TObject; Button: TMouseButton;
@@ -48,7 +48,7 @@ var
 
 implementation
 
-uses Unit1, MainUnit;
+uses MainUnit;
 
 {$R *.DFM}
 
@@ -101,10 +101,10 @@ begin
  Label1.Font.Color:=cFormText;
  CuCine.Color:=cFormForeground;
  CuCine.Font.Color:=cFormText;
- T_X_T.DefBackground:=clWhite;
- T_X_T.DefFontColor:=clBlack;
- T_X_T_Old.Color:=cFormForeground;
- T_X_T_Old.Font.Color:=cFormText;
+ //T_X_T.Color:=clWhite;
+ //T_X_T.DefFontColor:=clBlack;
+ //T_X_T_Old.Color:=cFormForeground;
+ //T_X_T_Old.Font.Color:=cFormText;
  ToolbarButton971.Color:=cFormBackground;
  Invalidate;
 end;

@@ -39,7 +39,7 @@ var
 
 implementation
 
-uses Unit1, MainUnit, procUnit;
+uses MainUnit, procUnit;
 
 {$R *.DFM}
 

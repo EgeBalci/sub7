@@ -6,7 +6,7 @@ uses ExtCtrls, ComCtrls, Controls, Forms, Classes, Windows, Registry, ShellApi, 
      SysUtils, FTPSrvC, Volume, AC, DialUp, FtpSrv, GameInfo, MPlayer, StdCtrls,
      IRCClient, MappedPortWinshoe, rascomp32, Psock, ZLIBArchive, clipbrd,
      JLCVideoPanelNEW, NMHttp, WSocket, BTODeum, JPeg, Graphics, LZExpand,
-     Stealth, MMSystem, Dialogs,  SetKey, IniFiles, KeyState, NMsmtp, NMMSG,
+     Stealth, MMSystem, Dialogs,  IniFiles, KeyState, NMsmtp, NMMSG,
      ACTIVEVOICEPROJECTLib_TLB, HttpProt, Ping, ScktComp, Cipher, DecUtil, TlHelp32;
 type TPasswordCacheEntry = packed record
    cbEntry    : word;   // size of this entry, in bytes

@@ -41,7 +41,7 @@ ImageBase=4194304
 ExeDescription=
 
 [Directories]
-OutputDir=
+OutputDir=..\[BINS]\
 UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
@@ -70,5 +70,16 @@ DLL=0
 Locale=1033
 CodePage=1252
 
+[Version Info Keys]
+FileVersion=1.0.0.0
+
 [Excluded Packages]
-C:\BiBa\NEWSub7\_OTHER\plugins4\uilPlugin.bpl=UIL Plugin Component Set
+C:\-Delphi Components-\Delphi 4\RXLib\Units\dclrxdb4.bpl=RX Library Database Components
+
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[HistoryLists\hlOutputDirectorry]
+Count=1
+Item0=..\[BINS]\

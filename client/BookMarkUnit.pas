@@ -39,7 +39,7 @@ var
 
 implementation
 
-uses Unit1, showmessageunit, FileMunit, MainUnit;
+uses showmessageunit, FileMunit, MainUnit;
 
 {$R *.DFM}
 

@@ -76,7 +76,7 @@ var
 
 implementation
 
-uses Unit1, MainUnit, showmessageunit, AnimUnit, GetPathUnit, BookMarkUnit;
+uses MainUnit, showmessageunit, AnimUnit, GetPathUnit, BookMarkUnit;
 
 {$R *.DFM}
 

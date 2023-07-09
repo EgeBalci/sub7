@@ -41,7 +41,7 @@ ImageBase=4194304
 ExeDescription=
 
 [Directories]
-OutputDir=
+OutputDir=..\[BINS]\
 UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
@@ -54,6 +54,11 @@ UsePackages=0
 [Parameters]
 RunParams=
 HostApplication=
+
+[Language]
+ActiveLang=
+ProjectLang=$00000409
+RootDir=
 
 [Version Info]
 IncludeVerInfo=0
@@ -83,14 +88,7 @@ ProductVersion=1.0.0.0
 Comments=
 
 [Excluded Packages]
-$(DELPHI)\Bin\dcldb40.bpl=Borland Database Components
-$(DELPHI)\Bin\dcl31w40.bpl=Delphi 1.0 Compatibility Components
-$(DELPHI)\Bin\dclqrt40.bpl=QuickReport Components
-$(DELPHI)\Bin\dcltee40.bpl=Borland TeeChart Components
-$(DELPHI)\Bin\dcldss40.bpl=Borland Decision Cube Components
-C:\WINDOWS\SYSTEM\\ibevnt40.bpl=Borland Interbase Event Alerter Component
-$(DELPHI)\Bin\dclmid40.bpl=Borland MIDAS Components
-$(DELPHI)\Bin\DBWEBXPRT.BPL=Inprise Web Wizard Package
+$(DELPHI)\Bin\DBWEBXPRT.BPL=Borland Web Wizard Package
 
 [HistoryLists\hlUnitAliases]
 Count=1
@@ -99,3 +97,7 @@ Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 [HistoryLists\hlSearchPath]
 Count=1
 Item0=c:\temp\delphi\
+
+[HistoryLists\hlOutputDirectorry]
+Count=1
+Item0=..\[BINS]\
