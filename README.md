@@ -1,6 +1,6 @@
 # Sub7
 
-This is the complete source code to **Sub7 2.1.3 Bonus**,written in Delphi by mobman and released June 2, 2000. I recieved this source code directly from mobman after extensive OSINT within the past 5 years to find mobman, which i wrote about [::HERE::](https://www.illmob.org/notmymobman/). This source code will be released to coincide with my talk at [ROOTCON](https://www.rootcon.org/) later this year.
+This is the complete source code to **Sub7 2.1.3 Bonus**,written in Delphi by mobman and released June 2, 2000. I recieved this source code directly from mobman after extensive OSINT within the past 5 years to find mobman, which i wrote about [::HERE::](https://www.illmob.org/notmymobman/). This source code will be released to coincide with my talk at [BSidesCT](https://www.bsidesct.org/) later this year.
 
 ## History
 Sub7 or SubSeven is a (RAT) Remote Access Trojan horse program originally released in 1999. Its name was derived by spelling NetBus backwards ("suBteN") and swapping "ten" with "seven" by a Romanian coder with the moniker '_mobman_'. 
